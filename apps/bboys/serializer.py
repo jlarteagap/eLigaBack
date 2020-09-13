@@ -13,6 +13,7 @@ class CitySerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class BboySerializer(serializers.ModelSerializer):
+    city = serializers.StringRelatedField(many=False)
     class Meta:
         model = Bboy
         fields = '__all__'

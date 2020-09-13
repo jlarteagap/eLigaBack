@@ -30,8 +30,10 @@ ALLOWED_HOSTS = []
 #CORS
 CORS_ORIGIN_ALL_ALL = True
 
-CORS_ORIGIN_WHITELIST = ['http://localhost:3000']
-# Application definition
+CORS_ORIGIN_WHITELIST = [
+  'http://localhost:3000',
+  'http://127.0.0.1:3000'
+]
 
 # Application definition
 
@@ -57,6 +59,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'eLigaBack.urls'
